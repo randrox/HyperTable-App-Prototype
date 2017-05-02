@@ -16,6 +16,8 @@ a {
 	height:35px;
 	text-align:center;
 	color:#fff;
+	border: none;
+	background-color: #e63636;
 	line-height:35px;
 }
 .button a {
@@ -462,9 +464,9 @@ Copyrights Styles Start
 	line-height:85px;
 	background:url(../images/panel-bg.png);
 }
-.copyrights-bottom { 
-	width:100%; 
-	background:url(../images/h-dots.png) repeat-x; 
-	height:2px; 
+.copyrights-bottom {
+	width:100%;
+	background:url(../images/h-dots.png) repeat-x;
+	height:2px;
 	margin-top:-5px;
 }

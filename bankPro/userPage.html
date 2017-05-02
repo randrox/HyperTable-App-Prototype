@@ -7,7 +7,7 @@
   <link href="css/styles.css" rel="stylesheet" type="text/css" />
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
-  <script language="javascript" src="js/mainPage.js"></script>
+  <script language="javascript" src="js/userPage.js"></script>
 </head>
 <body>
 <div class="wrapper">
@@ -16,10 +16,9 @@
     <div class="menu">
       <ul>
         <li><a href="#" class="active">Home</a></li>
-        <li><a href="#">About</a></li>
         <li><a href="#">Services</a></li>
-        <li class="nobg"><a href="#">Sign In</a></li>
       </ul>
+      <a><label id="personName" style="font-size: 28px; color: ##44ed4a; display: none"/></a>
     </div>
   </div>
   <div class="searchform-container">
@@ -27,31 +26,14 @@
   </div>
   <div class="clear"></div>
   <div class="page">
-    <div class="main-banner"><img src="images/logoDollar.jpg" alt="banner" /></div>
+    <div class="">
+      <div class="logo">BALANCE:
+      <label id="balance" style="font-size: 28px; color: ##44ed4a; display: none"/>
+      </div>
+    </div>
     <div class="clear"></div>
     <div class="left-column">
-      <div class="dark-panel">
-        <div class="dark-panel-top"></div>
-        <div class="dark-panel-center">
-          <ul>
-            <li>
-              <h1>Sign In Now</h1>
-            </li>
-            <li>
-              <p>Sign In</p>
-            </li>
-            <li class="username">
-              <input id="userID" name="userid" type="text" class="login-input" />
-            </li>
-            <li class="password">
-              <input id="password" name="passcode" type="password" class="login-input" />
-            </li>
-            <li><button id="loginButton" class="button">Sign In</button></li>
-            <li><label id="idErr" style="font-size: 14px; color: #BD2420; display: none"> </label></li>
-          </ul>
-        </div>
-        <div class="dark-panel-bottom"></div>
-      </div>
+
       <div class="light-panel">
         <div class="light-panel-top"></div>
         <div class="light-panel-bottom"></div>
@@ -59,31 +41,16 @@
       <div class="dark-panel">
         <div class="dark-panel-top"></div>
         <div class="dark-panel-center">
-          <ul>
+          <ul id="movements">
             <li>
               <h1>Movements</h1>
             </li>
-            <li class="date">06-23-2012</li>
-            <li class="news">You did a tranfer of $25000</li>
           </ul>
         </div>
         <div class="dark-panel-bottom"></div>
       </div>
     </div>
     <div class="right-column">
-
-      <div class="right-column-content">
-        <div class="right-column-content-heading">
-          <h1>Do you want an account?</h1>
-          <h2>Account</h2>
-        </div>
-        <div class="right-column-content-content">
-          <p>If you want to create an account you have to take contact with some of our adminstrators</p>
-          <div class="button"><a href="#" >More Info</a></div>
-        </div>
-        <div class="right-column-content-img-right"> <img src="images/userLogo.jpg" alt="banner" /> </div>
-        <div class="clear right-cloumn-content-border"></div>
-      </div>
       <div class="right-column-content">
         <div class="right-column-content-heading">
           <h1>Money Transfer</h1>
