@@ -14,21 +14,11 @@ Get a time at a proportion of a range of two formatted times.
 http://stackoverflow.com/questions/553303/generate-a-random-date-between-two-other-dates
 
 """
-def strTimeProp(start, end, format, prop):
-    
-    stime = time.mktime(time.strptime(start, format))
-    etime = time.mktime(time.strptime(end, format))
-
-    ptime = stime + prop * (etime - stime)
-
-    return time.strftime(format, time.localtime(ptime))
-
-
-def randomDate(start, end, prop):
-    return strTimeProp(start, end, '%m/%d/%Y %I:%M %p', prop)
-
 
 def generateUsers():
+    fileNames = open('people.txt', 'w')
+    fileLogin = open('login.txt', 'w')
+    
     names = ["Daniel","Daniela","Alejandro","Alejandra","Pablo","Hugo","Alvaro","Sergio","Diego","Mario",
              "Maria","Carlos","Karla","Javier","Ana","Miguel","Samuel","Jorge","Jason","David",
              "Antonio","Alisson","Aaron","Martin","Oscar","Andres","Andrea","Luis","Lucia","Erick",
@@ -49,30 +39,33 @@ def generateUsers():
 
     result = ""
     DNIList = []
+    login = ""
 
-    for i in range (0,10):
-        DNI = str(randint(111111111,777777777))
+    for i in range (0,5000000):
+        DNI = str(randint(1,7)) + ("%d%d%d%d%d%d%d%d" % (i//10000000%10, i//1000000%10, i//100000%10, i//10000%10, i//1000%10, i//100%10, i//10%10, i%10))
         DNIList.append(DNI)
         name = names[randint(0,len(names)-1)]
         lastName = lastNames[randint(0,len(lastNames)-1)]
         accountBalance = str(uniform(0, 3000000))
-        result += DNI + "\t" + name + "\t" + lastName + "\t" + accountBalance + "\n"
+        fileNames.write(DNI + "\tpersonName\t" + name + "\n" +
+                        DNI + "\tpersonLastName\t" + lastName + "\n" +
+                        DNI + "\tpersonBalance\t" + accountBalance + "\n")
+        
+        fileLogin.write(DNI + "\tpassword\t" + "1234\n")
 
-    print(result)
     generateTransfers(DNIList)
 
 def generateTransfers(DNIList):
     result = ""
-
-    for i in range (0,10):
+    fileTransfers = open('transfers.txt', 'w')
+    for i in range (0,10000000):
         DNITransmitter = DNIList[randint(0,len(DNIList)-1)]
-        date = randomDate("1/1/2000 1:30 PM", "1/1/2017 4:50 AM", random.random())
-        date = date[:-8]
+        date = str(randint(9,10))+ "/15/2017"
         amount = str(uniform(0, 3000000))
         DNIReceiver = DNIList[randint(0,len(DNIList)-1)]
-        result += DNITransmitter + "\t" + date + "\t" + amount + "\t" + DNIReceiver + "\n"
+        fileTransfers.write(DNITransmitter + "\ttransferAmount:" + date + "\t" + amount + "\n" +
+                            DNITransmitter + "\tmoneyReceptor\t" + DNIReceiver + "\n")
 
-    print(result)
 
 def main():
     generateUsers()
