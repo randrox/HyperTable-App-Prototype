@@ -21,6 +21,8 @@ def readTransfer(userID, pMonth):
     print(counter)
 
 def main():
-    readTransfer(400000002, 1)
+    userID = input("Id del usuario: ")
+    pMonth = input("Mes deseado: ")
+    readTransfer(int(userID), int(pMonth))
 
 main()
