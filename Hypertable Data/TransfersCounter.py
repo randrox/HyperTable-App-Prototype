@@ -18,7 +18,7 @@ def readTransfer(userID, pMonth):
                     
                     if(int(month) == pMonth):
                         counter = counter + 1     
-    print(counter)
+    print("Cantidad de transacciones: " + str(counter))
 
 def main():
     userID = input("Id del usuario: ")
