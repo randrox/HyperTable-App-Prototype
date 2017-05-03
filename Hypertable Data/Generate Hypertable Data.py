@@ -41,7 +41,7 @@ def generateUsers():
     DNIList = []
     login = ""
 
-    for i in range (0,5000000):
+    for i in range (0,100):
         DNI = str(randint(1,7)) + ("%d%d%d%d%d%d%d%d" % (i//10000000%10, i//1000000%10, i//100000%10, i//10000%10, i//1000%10, i//100%10, i//10%10, i%10))
         DNIList.append(DNI)
         name = names[randint(0,len(names)-1)]
@@ -58,7 +58,7 @@ def generateUsers():
 def generateTransfers(DNIList):
     result = ""
     fileTransfers = open('transfers.txt', 'w')
-    for i in range (0,10000000):
+    for i in range (0,100):
         DNITransmitter = DNIList[randint(0,len(DNIList)-1)]
         date = str(randint(9,10))+ "/15/2017"
         amount = str(uniform(0, 3000000))
